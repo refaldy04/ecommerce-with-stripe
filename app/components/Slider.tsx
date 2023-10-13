@@ -7,7 +7,7 @@ import Image from "next/image";
 import { sliderItems } from "../data";
 
 const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(1);
 
   const handleClick = (direction: string) => {
     if (direction === "left") {
@@ -25,9 +25,10 @@ const Slider = () => {
         <ArrowLeftOutlinedIcon />
       </div>
       <div
-        className={`h-full flex translate-x-[${
-          slideIndex * -100
-        }vw] transition-all duration-1000`}
+        className={
+          `h-full flex transition-all duration-1000 ` +
+          `translate-x-[${slideIndex * -100}vw]`
+        }
       >
         {sliderItems.map((item) => (
           <div
