@@ -43,34 +43,34 @@ export const categories = [
 export const popularProducts = [
   {
     id: 1,
-    img: "https://picsum.photos/800/800?shop,dress&random=7",
+    img: "/images/belt.png",
   },
   {
     id: 2,
-    img: "https://picsum.photos/800/800?shop,dress&random=8",
+    img: "/images/china.png",
   },
   {
     id: 3,
-    img: "https://picsum.photos/800/800?shop,dress&random=9",
+    img: "/images/sandals.png",
   },
   {
     id: 4,
-    img: "https://picsum.photos/800/800?shop,dress&random=10",
+    img: "/images/girl.png",
   },
   {
     id: 5,
-    img: "https://picsum.photos/800/800?shop,dress&random=11",
+    img: "/images/hacker.png",
   },
   {
     id: 6,
-    img: "https://picsum.photos/800/800?shop,dress&random=12",
+    img: "/images/dress.png",
   },
   {
     id: 7,
-    img: "https://picsum.photos/800/800?shop,dress&random=13",
+    img: "/images/etnic.png",
   },
   {
     id: 8,
-    img: "https://picsum.photos/800/800?shop,dress&random=14",
+    img: "/images/roma.png",
   },
 ];

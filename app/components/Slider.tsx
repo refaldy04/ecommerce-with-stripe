@@ -6,8 +6,14 @@ import ArrowRightOutlinedIcon from "@mui/icons-material/ArrowRightOutlined";
 import Image from "next/image";
 import { sliderItems } from "../data";
 
+const dynamicTailwind = [
+  "translate-x-[0vw]",
+  "translate-x-[-100vw]",
+  "translate-x-[-200vw]",
+];
+
 const Slider = () => {
-  const [slideIndex, setSlideIndex] = useState(1);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction: string) => {
     if (direction === "left") {

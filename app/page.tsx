@@ -4,6 +4,7 @@ import Announcement from "./components/Announcement";
 import Slider from "./components/Slider";
 import Categories from "./components/Categories";
 import Products from "./components/Products";
+import NewsLetter from "./components/NewsLetter";
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -18,6 +19,7 @@ export default function Home() {
       <Slider />
       <Categories />
       <Products />
+      <NewsLetter />
     </main>
   );
 }

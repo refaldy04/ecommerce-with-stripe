@@ -11,7 +11,7 @@ interface ProductItem {
 
 const Product: React.FC<ProductItem> = ({ id, img }) => {
   return (
-    <div className="w-[280px] flex justify-center items-center bg-[#28949b] relative group">
+    <div className="w-[280px] h-[350px] flex justify-center items-center bg-[#28949b] relative group">
       <div className="h-[200px] w-[200px] rounded-full bg-white absolute"></div>
       <div className="z-10">
         <Image src={img} alt="product-image" width={280} height={280} />
