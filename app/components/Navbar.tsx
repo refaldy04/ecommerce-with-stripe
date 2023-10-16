@@ -5,7 +5,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Navbar = () => {
   return (
-    <div className="h-16">
+    <div className="bg-[#fcf5f5]">
       <div className="container p-4 flex justify-between items-center">
         <div className="flex-1 flex items-center">
           <span className="text-sm cursor-pointer">EN</span>

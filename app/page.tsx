@@ -15,8 +15,6 @@ const urbanist = Urbanist({
 export default function Home() {
   return (
     <main className={`${urbanist.variable} font-sans`}>
-      <Announcement />
-      <Navbar />
       <Slider />
       <Categories />
       <Products />
