@@ -4,10 +4,14 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Navbar";
 
 const Product = () => {
   return (
     <div className="bg-[#fcf5f5]">
+      <Announcement />
+      <Navbar />
       <div className="p-12 flex">
         <div className="flex-1">
           <Image

@@ -2,10 +2,14 @@ import React from "react";
 import Products from "../components/Products";
 import NewsLetter from "../components/NewsLetter";
 import Footer from "../components/Footer";
+import Announcement from "../components/Announcement";
+import Navbar from "../components/Navbar";
 
 const ProductList = () => {
   return (
     <section className="bg-[#fcf5f5]">
+      <Announcement />
+      <Navbar />
       <h1 className="text-4xl font-semibold mx-5 py-5">Dresses</h1>
       <div className="flex justify-between">
         <p className="m-5 flex items-center gap-2">
