@@ -12,7 +12,7 @@ const Product = () => {
     <div className="bg-[#fcf5f5]">
       <Announcement />
       <Navbar />
-      <div className="p-12 flex">
+      <div className="p-2 lg:p-12 flex flex-col lg:flex-row">
         <div className="flex-1">
           <Image
             src="/images/etnic.png"
@@ -21,7 +21,7 @@ const Product = () => {
             height={500}
           />
         </div>
-        <div className="flex-1 px-12">
+        <div className="flex-1 px-2 lg:px-12">
           <h1 className="text-4xl">Indian Etnic Sandal</h1>
           <p className="my-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -30,7 +30,7 @@ const Product = () => {
             numquam impedit repellendus. Veniam, quisquam.
           </p>
           <span className="text-5xl">$ 20</span>
-          <div className="w-2/3 flex justify-between my-7">
+          <div className="w-full lg:w-2/3 flex justify-between my-7">
             <div className="flex items-center gap-2">
               <span className="text-lg">Color</span>
               <select
@@ -58,7 +58,7 @@ const Product = () => {
               </select>
             </div>
           </div>
-          <div className="flex w-2/3 items-center justify-between">
+          <div className="flex w-full lg:w-2/3 items-center justify-between">
             <div className="flex items-center font-semibold">
               <RemoveIcon />
               <span className="w-7 h-7 rounded-lg border-2 border-[#28949B] flex justify-center items-center mx-1">

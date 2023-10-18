@@ -4,7 +4,7 @@ import CategoryItem from "./CategoryItem";
 
 const Categories = () => {
   return (
-    <div className="flex p-5 justify-between gap-3">
+    <div className="flex flex-col lg:flex-row lg:p-5 justify-between gap-3">
       {categories.map((item) => (
         <CategoryItem {...item} key={item.id} />
       ))}

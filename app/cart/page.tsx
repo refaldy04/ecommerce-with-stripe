@@ -11,23 +11,23 @@ const Cart = () => {
     <div>
       <Announcement />
       <Navbar />
-      <div className="p-5 text-center">
-        <h1 className="text-4xl">YOUR BAG</h1>
-        <div className="flex items-center justify-between p-5">
+      <div className="p-2 lg:p-5">
+        <h1 className="text-4xl text-center">YOUR BAG</h1>
+        <div className="flex items-center justify-between py-3 lg:p-5">
           <button className="p-2 font-semibold border-2 border-black shadow-md">
             CONTINUE SHOPPING
           </button>
-          <div className="flex gap-5">
+          <div className="lg:flex gap-5 hidden">
             <span className="underline cursor-pointer">Shopping Bag(2)</span>
             <span className="underline cursor-pointer">Your Whishlist(0)</span>
           </div>
-          <button className="p-2 font-semibold bg-black text-white">
+          <button className="p-2 font-semibold bg-black text-white border-black">
             CHECKOUT NOW
           </button>
         </div>
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-col lg:flex-row">
           <div className="w-full flex flex-col gap-10">
-            <div className="flex justify-between ">
+            <div className="flex justify-between flex-col lg:flex-row">
               <div className="flex flex-1">
                 <Image
                   src="https://picsum.photos/600/600?shop,dress&random=1"
@@ -49,10 +49,10 @@ const Cart = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="flex items-center font-semibold">
+              <div className="flex items-center justify-center flex-col mt-3 lg:mt-0">
+                <div className="flex items-center font-semibold gap-4">
                   <RemoveIcon />
-                  <span className="w-7 h-7 rounded-lg border-2 border-[#28949B] flex justify-center items-center mx-1">
+                  <span className="w-7 h-7 text-2xl rounded-lg border-2  flex justify-center items-center mx-1">
                     2
                   </span>
                   <AddIcon />
@@ -63,7 +63,7 @@ const Cart = () => {
 
             <hr className="border border-slate-300" />
 
-            <div className="flex justify-between ">
+            <div className="flex justify-between flex-col lg:flex-row">
               <div className="flex flex-1">
                 <Image
                   src="https://picsum.photos/600/600?shop,dress&random=2"
@@ -85,10 +85,10 @@ const Cart = () => {
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-center flex-col">
-                <div className="flex items-center font-semibold">
+              <div className="flex items-center justify-center flex-col mt-3 lg:mt-0">
+                <div className="flex items-center font-semibold gap-4">
                   <RemoveIcon />
-                  <span className="w-7 h-7 rounded-lg border-2 border-[#28949B] flex justify-center items-center mx-1">
+                  <span className="w-7 h-7 rounded-lg text-2xl border-2 flex justify-center items-center mx-1">
                     1
                   </span>
                   <AddIcon />
@@ -97,7 +97,7 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          <div className="w-1/3 border border-gray-400 rounded-md p-5 ml-2 h-[50vh] flex flex-col gap-5 items-start">
+          <div className="w-full mt-3 lg:mt-0 lg:w-1/3 border border-gray-400 rounded-md p-5 ml-2 h-[50vh] flex flex-col gap-5 items-start">
             <h1 className="text-3xl">ORDER SUMMARY</h1>
             <div className="flex justify-between w-full">
               <span>Subtotal</span>

@@ -11,13 +11,13 @@ const ProductList = () => {
       <Announcement />
       <Navbar />
       <h1 className="text-4xl font-semibold mx-5 py-5">Dresses</h1>
-      <div className="flex justify-between">
-        <p className="m-5 flex items-center gap-2">
+      <div className="flex justify-between px-2">
+        <div className="lg:m-5 flex items-start lg:items-center gap-2 flex-col lg:flex-row w-full">
           <span className="text-lg font-semibold">Filter Products :</span>
           <select
             name=""
             id=""
-            className="border-black ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
+            className="border-black w-1/2 ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
           >
             <option disabled selected>
               Color
@@ -32,7 +32,7 @@ const ProductList = () => {
           <select
             name=""
             id=""
-            className="border-black ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
+            className="border-black w-1/2 ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
           >
             <option disabled selected>
               Size
@@ -43,13 +43,13 @@ const ProductList = () => {
             <option value="">L</option>
             <option value="">XL</option>
           </select>
-        </p>
-        <p className="m-5">
+        </div>
+        <div className="lg:m-5 flex items-start lg:items-center gap-2 flex-col lg:flex-row w-full">
           <span className="text-lg font-semibold">Sort Products :</span>
           <select
             name=""
             id=""
-            className="border-black ring-transparent focus:ring-0 focus:border-black text-sm ml-2 px-6 py-1"
+            className="border-black ring-transparent focus:ring-0 focus:border-black text-sm lg:ml-2 lg:px-6 py-1"
           >
             <option disabled selected>
               Newest
@@ -57,7 +57,7 @@ const ProductList = () => {
             <option value="">Price (asc)</option>
             <option value="">Price (desc)</option>
           </select>
-        </p>
+        </div>
       </div>
       <Products />
       <NewsLetter />

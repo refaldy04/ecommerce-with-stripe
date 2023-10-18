@@ -4,7 +4,7 @@ import React from "react";
 const Login = () => {
   return (
     <div className="w-screen h-screen bg-register-bg bg-center bg-cover bg-no-repeat flex justify-center items-center">
-      <div className="p-5 w-1/4 bg-white">
+      <div className="p-5 lg:w-1/4 w-3/4 bg-white">
         <h1 className="text-2xl">SIGN IN</h1>
         <form className="flex flex-col gap-5 my-5">
           <input

@@ -4,11 +4,11 @@ import SendIcon from "@mui/icons-material/Send";
 const NewsLetter = () => {
   return (
     <div className="h-[60vh] bg-[#fcf5f5] flex justify-center items-center flex-col">
-      <h1 className="text-7xl mb-5 font-semibold">Newsletter</h1>
-      <div className="text-2xl mb-5">
+      <h1 className="text-5xl lg:text-7xl mb-5 font-semibold">Newsletter</h1>
+      <div className="text-2xl mb-5 text-center">
         Get timely updates from your favorite products.
       </div>
-      <div className="w-1/2 h-10 bg-white flex justify-between border-2 border-slate-200">
+      <div className="w-4/5 lg:w-1/2 h-10 bg-white flex justify-between border-2 border-slate-200">
         <input
           type="text"
           placeholder="Your email"

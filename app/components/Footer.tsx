@@ -10,7 +10,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-col lg:flex-row">
       <div className="flex-1 flex flex-col p-5 gap-5">
         <h1>RESHOP.</h1>
         <p>
@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 p-5">
+      <div className="flex-1 p-5 hidden lg:block">
         <h3 className="mb-8">Useful Links</h3>
         <ul className="flex flex-wrap gap-y-2">
           <li className="w-1/2">Home</li>
