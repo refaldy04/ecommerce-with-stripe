@@ -1,11 +1,11 @@
 import React from "react";
-import NewsLetter from "../components/NewsLetter";
-import Footer from "../components/Footer";
+import NewsLetter from "../../components/NewsLetter";
+import Footer from "../../components/Footer";
 import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import Announcement from "../components/Announcement";
-import Navbar from "../components/Navbar";
+import Announcement from "../../components/Announcement";
+import Navbar from "../../components/Navbar";
 
 const Product = () => {
   return (

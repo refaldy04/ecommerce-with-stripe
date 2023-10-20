@@ -3,13 +3,14 @@ import React from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import Link from "next/link";
 
 interface ProductItem {
-  id: number;
+  _id: number;
   img: string;
 }
 
-const Product: React.FC<ProductItem> = ({ id, img }) => {
+const Product: React.FC<ProductItem> = ({ _id, img }) => {
   return (
     <div className="w-full lg:w-[280px] h-[350px] flex justify-center items-center bg-[#e8f9fa] relative group">
       <div className="h-[200px] w-[200px] rounded-full bg-white absolute"></div>
@@ -21,7 +22,9 @@ const Product: React.FC<ProductItem> = ({ id, img }) => {
           <ShoppingCartOutlinedIcon />
         </div>
         <div className="h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center hover:bg-[#e9f5f5] hover:scale-110 cursor-pointer">
-          <SearchOutlinedIcon />
+          <Link href={`/product/${_id}`}>
+            <SearchOutlinedIcon />
+          </Link>
         </div>
         <div className="h-[40px] w-[40px] rounded-full bg-white flex justify-center items-center hover:bg-[#e9f5f5] hover:scale-110 cursor-pointer">
           <FavoriteBorderOutlinedIcon />

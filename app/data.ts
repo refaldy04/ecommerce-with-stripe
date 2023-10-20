@@ -27,16 +27,19 @@ export const categories = [
     id: 1,
     img: "https://picsum.photos/800/800?shop,dress&random=4",
     title: "SHIRT STYLE!",
+    cat: "men",
   },
   {
     id: 2,
     img: "https://picsum.photos/800/800?shop,dress&random=5",
     title: "LOUNGEWEAR LOVE",
+    cat: "women",
   },
   {
     id: 3,
     img: "https://picsum.photos/800/800?shop,dress&random=6",
     title: "LIGHT JACKETS",
+    cat: "accessories",
   },
 ];
 
