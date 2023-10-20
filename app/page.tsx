@@ -19,7 +19,7 @@ export default function Home() {
       <Navbar />
       <Slider />
       <Categories />
-      <Products />
+      <Products filters={{ size: "", color: "" }} />
       <NewsLetter />
       <Footer />
     </main>

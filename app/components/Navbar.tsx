@@ -1,11 +1,16 @@
+"use client";
+
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const { quantity } = useSelector((state: any) => state.cart);
+
   return (
-    <div className="bg-[#fcf5f5] py-2">
+    <div className="bg-[#fcf5f5] py-2 border-b-2 shadow-md">
       <div className="container p-2 lg:p-4 flex justify-between items-center">
         <div className="lg:flex-1 flex items-center">
           <span className="text-sm cursor-pointer hidden lg:block">EN</span>
@@ -25,7 +30,7 @@ const Navbar = () => {
           <div className="lg:text-sm cursor-pointer text-xs">REGISTER</div>
           <div className="lg:text-sm cursor-pointer text-xs">SIGN IN</div>
           <div className="lg:text-sm cursor-pointer text-xs">
-            <Badge badgeContent={4} color="info">
+            <Badge badgeContent={quantity} color="info">
               <ShoppingCartIcon color="action" />
             </Badge>
           </div>

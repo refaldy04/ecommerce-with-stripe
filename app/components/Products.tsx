@@ -1,17 +1,16 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { popularProducts } from "../data";
 import Product from "./Product";
 import axios from "axios";
 
 interface ProductsType {
-  cat: string;
+  cat?: string;
   filters: {
     size?: string;
     color?: string;
   };
-  sort: string;
+  sort?: string;
 }
 
 const Products: React.FC<ProductsType> = ({ cat, filters, sort }) => {
@@ -63,7 +62,7 @@ const Products: React.FC<ProductsType> = ({ cat, filters, sort }) => {
   }, [sort]);
 
   return (
-    <div className="flex p-2 lg:p-5 justify-center lg:justify-start gap-3 flex-wrap bg-[#fcf5f5]">
+    <div className="flex p-2 lg:p-5 gap-2 justify-center lg:justify-start  flex-wrap bg-[#fcf5f5]">
       {cat
         ? filteredProducts.map((item: any) => (
             <Product {...item} key={item._id} />
