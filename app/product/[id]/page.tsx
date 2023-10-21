@@ -80,7 +80,7 @@ const Product = ({ params }: { params: { id: string } }) => {
               <span className="text-lg">Color</span>
               <select
                 className="border-black ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
-                onChange={(e) => setSize(e.target.value)}
+                onChange={(e) => setColor(e.target.value)}
               >
                 {product.color?.map((item) => (
                   <option value={item} key={item}>

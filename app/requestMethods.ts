@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8080/api/";
+const BASE_URL = "https://clever-shoe-ant.cyclic.app/api/";
 const TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjUxNTcxOGI0ZDFhMDc5YWIzMjQyZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5Nzc2MzM4NSwiZXhwIjoxNjk4MDIyNTg1fQ.GKa4jGfGxxuPfhawRwHHiG45l5mBytzJK0IVfoUF0Fs";
 

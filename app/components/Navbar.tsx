@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useSelector } from "react-redux";
+import Link from "next/link";
 
 const Navbar = () => {
   const { quantity } = useSelector((state: any) => state.cart);
@@ -30,9 +31,11 @@ const Navbar = () => {
           <div className="lg:text-sm cursor-pointer text-xs">REGISTER</div>
           <div className="lg:text-sm cursor-pointer text-xs">SIGN IN</div>
           <div className="lg:text-sm cursor-pointer text-xs">
-            <Badge badgeContent={quantity} color="info">
-              <ShoppingCartIcon color="action" />
-            </Badge>
+            <Link href="/cart">
+              <Badge badgeContent={quantity} color="info">
+                <ShoppingCartIcon color="action" />
+              </Badge>
+            </Link>
           </div>
         </div>
       </div>

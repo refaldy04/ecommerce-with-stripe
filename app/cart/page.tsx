@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
@@ -5,10 +7,10 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { Provider } from "react-redux";
-import store from "@/redux/store";
+import { useSelector } from "react-redux";
 
 const Cart = () => {
+  const cart = useSelector((state: any) => state.cart);
   return (
     <div>
       <Announcement />
@@ -29,43 +31,56 @@ const Cart = () => {
         </div>
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="w-full flex flex-col gap-10">
-            <div className="flex justify-between flex-col lg:flex-row">
-              <div className="flex flex-1">
-                <Image
-                  src="https://picsum.photos/600/600?shop,dress&random=1"
-                  alt="product-image"
-                  width={300}
-                  height={300}
-                  className="w-52"
-                />
-                <div className="text-start p-5 flex flex-col justify-around">
-                  <span>
-                    <b>Product: </b>JESSIE THUNDER SHOES
-                  </span>
-                  <span>
-                    <b>ID: </b>123123123123
-                  </span>
-                  <div className="w-5 h-5 rounded-full bg-black"></div>
-                  <span>
-                    <b>Size: </b>37.5
+            {cart.products.map((product: any) => (
+              <div className="flex justify-between flex-col lg:flex-row">
+                <div className="flex flex-1">
+                  <Image
+                    src={product.img}
+                    alt="product-image"
+                    width={300}
+                    height={300}
+                    className="w-52"
+                  />
+                  <div className="text-start p-5 flex flex-col justify-around">
+                    <span>
+                      <b>Product: </b>
+                      {product.title}
+                    </span>
+                    <span>
+                      <b>ID: </b>
+                      {product._id}
+                    </span>
+                    <span>
+                      <b>Color: </b>
+                      {product.color}
+                    </span>
+                    {/* <div
+                      className={`w-5 h-5 rounded-full bg-${product.color}`}
+                    ></div> */}
+                    <span>
+                      <b>Size: </b>
+                      {product.size}
+                    </span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col mt-3 lg:mt-0">
+                  <div className="flex items-center font-semibold gap-4">
+                    <RemoveIcon />
+                    <span className="w-7 h-7 text-2xl rounded-lg border-2  flex justify-center items-center mx-1">
+                      {product.quantity}
+                    </span>
+                    <AddIcon />
+                  </div>
+                  <span className="text-4xl mt-6">
+                    Rp {product.price * product.quantity}
                   </span>
                 </div>
               </div>
-              <div className="flex items-center justify-center flex-col mt-3 lg:mt-0">
-                <div className="flex items-center font-semibold gap-4">
-                  <RemoveIcon />
-                  <span className="w-7 h-7 text-2xl rounded-lg border-2  flex justify-center items-center mx-1">
-                    2
-                  </span>
-                  <AddIcon />
-                </div>
-                <span className="text-5xl mt-6">$ 30</span>
-              </div>
-            </div>
+            ))}
 
             <hr className="border border-slate-300" />
 
-            <div className="flex justify-between flex-col lg:flex-row">
+            {/* <div className="flex justify-between flex-col lg:flex-row">
               <div className="flex flex-1">
                 <Image
                   src="https://picsum.photos/600/600?shop,dress&random=2"
@@ -97,13 +112,13 @@ const Cart = () => {
                 </div>
                 <span className="text-5xl mt-6">$ 20</span>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="w-full mt-3 lg:mt-0 lg:w-1/3 border border-gray-400 rounded-md p-5 ml-2 h-[50vh] flex flex-col gap-5 items-start">
             <h1 className="text-3xl">ORDER SUMMARY</h1>
             <div className="flex justify-between w-full">
               <span>Subtotal</span>
-              <span>$ 80</span>
+              <span>Rp {cart.total}</span>
             </div>
             <div className="flex justify-between w-full">
               <span>Estimated Shipping</span>
@@ -115,7 +130,7 @@ const Cart = () => {
             </div>
             <div className="flex justify-between w-full font-semibold text-lg">
               <span>Total</span>
-              <span>$ 80</span>
+              <span>$ {cart.total}</span>
             </div>
             <button className="w-full p-2 bg-black text-white font-semibold">
               CHECKOUT NOW
