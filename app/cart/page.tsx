@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Announcement from "../components/Announcement";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -8,9 +8,34 @@ import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import { useSelector } from "react-redux";
+import StripeCheckout, { Token } from "react-stripe-checkout";
+import { userRequest } from "../requestMethods";
+import { useRouter } from "next/navigation";
 
 const Cart = () => {
+  const router = useRouter();
   const cart = useSelector((state: any) => state.cart);
+  const [stripeToken, setStripeToken] = useState<any>(null);
+
+  const onToken = (token: Token) => {
+    console.log(token);
+    setStripeToken(token);
+  };
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const data = await userRequest.post("checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: cart.total * 100,
+        });
+        router.push("/success");
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    stripeToken && makeRequest();
+  }, [stripeToken, cart.total]);
   return (
     <div>
       <Announcement />
@@ -118,7 +143,7 @@ const Cart = () => {
             <h1 className="text-3xl">ORDER SUMMARY</h1>
             <div className="flex justify-between w-full">
               <span>Subtotal</span>
-              <span>Rp {cart.total}</span>
+              <span>$ {cart.total}</span>
             </div>
             <div className="flex justify-between w-full">
               <span>Estimated Shipping</span>
@@ -132,9 +157,19 @@ const Cart = () => {
               <span>Total</span>
               <span>$ {cart.total}</span>
             </div>
-            <button className="w-full p-2 bg-black text-white font-semibold">
-              CHECKOUT NOW
-            </button>
+            <StripeCheckout
+              token={onToken}
+              description="Big Data Stuff" // the pop-in header subtitle
+              image="https://stripe.com/img/documentation/checkout/marketplace.png" // the pop-in header image (default none)
+              ComponentClass="div"
+              label="Buy the Thing" // text inside the Stripe button
+              panelLabel="Give Money" // prepended to the amount in the bottom pay button
+              amount={cart.total * 100} // cents
+              stripeKey={process.env.NEXT_PUBLIC_STRIPE}
+              name="RESHOP"
+              billingAddress
+              shippingAddress
+            />
           </div>
         </div>
       </div>
