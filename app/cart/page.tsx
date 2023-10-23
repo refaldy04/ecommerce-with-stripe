@@ -7,28 +7,40 @@ import Footer from "../components/Footer";
 import Image from "next/image";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import StripeCheckout, { Token } from "react-stripe-checkout";
 import { userRequest } from "../requestMethods";
 import { useRouter } from "next/navigation";
+import { addOrder } from "@/redux/orderRedux";
 
 const Cart = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
   const cart = useSelector((state: any) => state.cart);
   const [stripeToken, setStripeToken] = useState<any>(null);
 
   const onToken = (token: Token) => {
-    console.log(token);
     setStripeToken(token);
   };
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const data = await userRequest.post("checkout/payment", {
+        const { data } = await userRequest.post("checkout/payment", {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
+        dispatch(
+          addOrder({
+            userId: "currentUser._id",
+            products: cart.products.map((item: any) => ({
+              productId: item._id,
+              quantity: item.quantity,
+            })),
+            amount: cart.total,
+            address: data.billing_details.address,
+          })
+        );
         router.push("/success");
       } catch (error) {
         console.log(error);
@@ -36,6 +48,7 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total]);
+
   return (
     <div>
       <Announcement />
