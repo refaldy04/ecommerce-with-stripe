@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import Link from "next/link";
 
 const Navbar = () => {
-  const { quantity } = useSelector((state: any) => state.cart);
+  const { quantity } = useSelector((state: any) => state.persisted.cart);
 
   return (
     <div className="bg-[#fcf5f5] py-2 border-b-2 shadow-md">

@@ -1,7 +1,6 @@
 "use client";
 
 import { login } from "@/redux/apiCalls";
-import { loginStart } from "@/redux/userRedux";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";

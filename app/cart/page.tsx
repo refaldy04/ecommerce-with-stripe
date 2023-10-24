@@ -16,7 +16,7 @@ import { addOrder } from "@/redux/orderRedux";
 const Cart = () => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const cart = useSelector((state: any) => state.cart);
+  const cart = useSelector((state: any) => state.persisted.cart);
   const [stripeToken, setStripeToken] = useState<any>(null);
 
   const onToken = (token: Token) => {
