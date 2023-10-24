@@ -9,7 +9,9 @@ const Login = () => {
   const dispatch = useDispatch();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const { isFetching, error } = useSelector((state: any) => state.user);
+  const { isFetching, error } = useSelector(
+    (state: any) => state.persisted.user
+  );
 
   const handleLogin = (e: React.SyntheticEvent) => {
     e.preventDefault();
