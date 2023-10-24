@@ -18,7 +18,6 @@ const Products: React.FC<ProductsType> = ({ cat, filters, sort }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
-    console.log({ cat });
     const getProducts = async () => {
       try {
         const res = await axios.get(

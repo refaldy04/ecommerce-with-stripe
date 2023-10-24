@@ -30,6 +30,7 @@ const Cart = () => {
           tokenId: stripeToken.id,
           amount: cart.total * 100,
         });
+
         dispatch(
           addOrder({
             userId: "currentUser._id",
@@ -41,7 +42,7 @@ const Cart = () => {
             address: data.billing_details.address,
           })
         );
-        router.push("/success");
+        router.replace("/success");
       } catch (error) {
         console.log(error);
       }
