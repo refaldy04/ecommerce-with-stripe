@@ -16,7 +16,8 @@ const Footer = () => {
         <p>
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
-          humour, or randomised words which don't look even slightly believable.
+          humour, or randomised words which don&apos;t look even slightly
+          believable.
         </p>
         <div className="flex gap-3">
           <div className="w-10 h-10 rounded-full text-white bg-[#4267B2] flex justify-center items-center cursor-pointer">
