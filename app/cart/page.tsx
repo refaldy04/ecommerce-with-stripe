@@ -70,8 +70,11 @@ const Cart = () => {
         </div>
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="w-full flex flex-col gap-10">
-            {cart.products.map((product: any) => (
-              <div className="flex justify-between flex-col lg:flex-row">
+            {cart.products.map((product: any, index: number) => (
+              <div
+                className="flex justify-between flex-col lg:flex-row"
+                key={index}
+              >
                 <div className="flex flex-1">
                   <Image
                     src={product.img}
