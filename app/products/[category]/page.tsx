@@ -30,6 +30,7 @@ const ProductList = ({ params }: { params: { category: string } }) => {
           <span className="text-lg font-semibold">Filter Products :</span>
           <select
             name="color"
+            placeholder="Color"
             className="border-black w-1/2 lg:w-fit ring-transparent focus:ring-0 focus:border-black text-sm px-6 py-1"
             onChange={(e) => handleFilters(e)}
           >
