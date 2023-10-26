@@ -57,16 +57,16 @@ const Cart = () => {
       <div className="p-2 lg:p-5">
         <h1 className="text-4xl text-center">YOUR BAG</h1>
         <div className="flex items-center justify-between py-3 lg:p-5">
-          <button className="p-2 font-semibold border-2 border-black shadow-md">
+          <button
+            className="p-2 font-semibold border-2 border-black shadow-md"
+            onClick={() => router.push("/")}
+          >
             CONTINUE SHOPPING
           </button>
           <div className="lg:flex gap-5 hidden">
             <span className="underline cursor-pointer">Shopping Bag(2)</span>
             <span className="underline cursor-pointer">Your Whishlist(0)</span>
           </div>
-          <button className="p-2 font-semibold bg-black text-white border-black">
-            CHECKOUT NOW
-          </button>
         </div>
         <div className="flex justify-between flex-col lg:flex-row">
           <div className="w-full flex flex-col gap-10">
@@ -114,7 +114,7 @@ const Cart = () => {
                     <AddIcon />
                   </div>
                   <span className="text-4xl mt-6">
-                    Rp {product.price * product.quantity}
+                    $ {product.price * product.quantity}
                   </span>
                 </div>
               </div>
@@ -179,7 +179,7 @@ const Cart = () => {
               description="Big Data Stuff" // the pop-in header subtitle
               image="https://stripe.com/img/documentation/checkout/marketplace.png" // the pop-in header image (default none)
               ComponentClass="div"
-              label="Buy the Thing" // text inside the Stripe button
+              label="Checkout Now" // text inside the Stripe button
               panelLabel="Give Money" // prepended to the amount in the bottom pay button
               amount={cart.total * 100} // cents
               stripeKey={process.env.NEXT_PUBLIC_STRIPE}

@@ -40,6 +40,8 @@ const Product = ({ params }: { params: { id: string } }) => {
       try {
         const { data } = await publicRequest.get("/products/find/" + id);
         setProduct(data);
+        setColor(data.color[0]);
+        setSize(data.size[0]);
       } catch (error) {}
     };
 
@@ -74,7 +76,7 @@ const Product = ({ params }: { params: { id: string } }) => {
         <div className="flex-1 px-2 lg:px-12">
           <h1 className="text-4xl">{product.title}</h1>
           <p className="my-5">{product.desc}</p>
-          <span className="text-5xl">Rp {product.price}</span>
+          <span className="text-5xl">$ {product.price}</span>
           <div className="w-full lg:w-2/3 flex justify-between my-7">
             <div className="flex items-center gap-2">
               <span className="text-lg">Color</span>

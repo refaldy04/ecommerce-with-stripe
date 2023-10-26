@@ -1,44 +1,44 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://picsum.photos/800/800?shop,dress&random=1",
+    img: "/images/summer.jpg",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "#f1873e",
+    bg: "#91bdc8",
   },
   {
     id: 2,
-    img: "https://picsum.photos/800/800?shop,dress&random=2",
+    img: "/images/autumn.jpg",
     title: "AUTUMN SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "#f1873e",
   },
   {
     id: 3,
-    img: "https://picsum.photos/800/800?shop,dress&random=3",
+    img: "/images/loungewear.jpg",
     title: "LOUNGEWEAR SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
-    bg: "#f1873e",
+    bg: "#fff",
   },
 ];
 
 export const categories = [
   {
     id: 1,
-    img: "https://picsum.photos/800/800?shop,dress&random=4",
-    title: "SHIRT STYLE!",
+    img: "/images/men.jpg",
+    title: "MEN",
     cat: "men",
   },
   {
     id: 2,
-    img: "https://picsum.photos/800/800?shop,dress&random=5",
-    title: "LOUNGEWEAR LOVE",
+    img: "/images/women.jpg",
+    title: "WOMEN",
     cat: "women",
   },
   {
     id: 3,
-    img: "https://picsum.photos/800/800?shop,dress&random=6",
-    title: "LIGHT JACKETS",
+    img: "/images/acessories.jpg",
+    title: "ACCESSORIES",
     cat: "accessories",
   },
 ];

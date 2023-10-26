@@ -10,6 +10,9 @@ const dynamicTailwind = [
   "translate-x-[0vw]",
   "translate-x-[-100vw]",
   "translate-x-[-200vw]",
+  "bg-[#91bdc8]",
+  "bg-[#f1873e]",
+  "bg-[#ffffff]",
 ];
 
 const Slider = () => {
@@ -38,7 +41,7 @@ const Slider = () => {
       >
         {sliderItems.map((item) => (
           <div
-            className={`flex items-center w-screen bg-[#f1873e] h-full`}
+            className={`flex items-center w-screen bg-[${item.bg}] h-full`}
             key={item.id}
           >
             <div className="flex-1 h-full relative z-10">
