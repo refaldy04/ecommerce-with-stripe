@@ -4,12 +4,18 @@ import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import { logout } from "@/redux/userRedux";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
   const { currentUser } = useSelector((state: any) => state.persisted.user);
   const { quantity } = useSelector((state: any) => state.persisted.cart);
+
+  const handleLogout = () => {
+    dispatch(logout());
+  };
 
   return (
     <div className="bg-[#fcf5f5] py-2 border-b-2 shadow-md">
@@ -28,21 +34,23 @@ const Navbar = () => {
         <div className="lg:flex-1 text-end lg:text-center ml-2">
           <span className="font-semibold text-xl lg:text-3xl">RESHOP.</span>
         </div>
-        <div className="flex-1 flex items-center justify-end lg:justify-end gap-4 lg:gap-7">
-          <div
+        <div className="flex-1 flex items-center justify-end lg:justify-end gap-2 lg:gap-7 mr-2">
+          <Link
+            href="/auth/register"
             className={`lg:text-sm cursor-pointer text-xs ${
               currentUser && "hidden"
             }`}
           >
             REGISTER
-          </div>
-          <div
+          </Link>
+          <Link
+            href="/auth/login"
             className={`lg:text-sm cursor-pointer text-xs ${
               currentUser && "hidden"
             }`}
           >
             SIGN IN
-          </div>
+          </Link>
           <div className="lg:text-sm cursor-pointer text-xs">
             <Link href="/cart">
               <Badge badgeContent={quantity} color="info">
@@ -54,6 +62,7 @@ const Navbar = () => {
             className={`lg:text-sm cursor-pointer text-xs ${
               !currentUser && "hidden"
             }`}
+            onClick={handleLogout}
           >
             LOGOUT
           </div>
