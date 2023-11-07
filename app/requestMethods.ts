@@ -1,8 +1,26 @@
 import axios from "axios";
 
 const BASE_URL = "https://clever-shoe-ant.cyclic.app/api/";
-const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MjUxNTcxOGI0ZDFhMDc5YWIzMjQyZiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY5ODA2NDQzMCwiZXhwIjoxNjk4MzIzNjMwfQ.-hxoCgv_P2aaPlgTddS-GkftkuDO3FI6IdocGtKBN6o";
+let TOKEN = "";
+let persistRoot: string | null = "";
+if (typeof window !== "undefined") {
+  persistRoot = window?.localStorage?.getItem("persist:root");
+}
+
+if (persistRoot) {
+  try {
+    const parsedPersistRoot = JSON.parse(persistRoot);
+
+    if (parsedPersistRoot.user) {
+      const currentUser = JSON.parse(parsedPersistRoot.user).currentUser;
+      if (currentUser && currentUser.accessToken) {
+        TOKEN = currentUser.accessToken;
+      }
+    }
+  } catch (error) {
+    console.error("Error parsing localStorage data:", error);
+  }
+}
 
 export const publicRequest = axios.create({
   baseURL: BASE_URL,
