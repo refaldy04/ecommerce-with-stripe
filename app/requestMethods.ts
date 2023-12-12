@@ -1,8 +1,11 @@
+"use client";
+
 import axios from "axios";
 
 const BASE_URL = "https://clever-shoe-ant.cyclic.app/api/";
 let TOKEN = "";
 let persistRoot: string | null = "";
+console.log(typeof window);
 if (typeof window !== "undefined") {
   persistRoot = window?.localStorage?.getItem("persist:root");
 }
