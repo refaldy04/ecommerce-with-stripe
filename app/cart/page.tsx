@@ -12,6 +12,7 @@ import StripeCheckout, { Token } from "react-stripe-checkout";
 import { userRequest } from "../requestMethods";
 import { useRouter } from "next/navigation";
 import { addOrder } from "@/redux/orderRedux";
+import { resetCart } from "@/redux/cartRedux";
 
 const Cart = () => {
   const router = useRouter();
@@ -42,6 +43,7 @@ const Cart = () => {
             address: data.billing_details.address,
           })
         );
+        dispatch(resetCart());
         router.replace("/success");
       } catch (error) {
         console.log(error);
